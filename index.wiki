@@ -1,0 +1,4 @@
+= VimWikiWiki =
+*A Vimwiki Wiki about Vimwiki.*
+
+Still to fill with content.
