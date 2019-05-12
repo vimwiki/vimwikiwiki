@@ -1,0 +1,8 @@
+= Vimwiki Wiki =
+
+This is a Vimwiki Wiki with additional information and tips/tricks.
+
+*Todo List:*
+
+- [ ] Migrate the GitHub Wiki from the main project here.
+- [ ] Fill with other content.
