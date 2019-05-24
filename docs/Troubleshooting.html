@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Troubleshooting</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<div id="Troubleshooting"><h1 id="Troubleshooting" class="header"><a href="#Troubleshooting">Troubleshooting</a></h1></div>
+
+<div id="Troubleshooting-Minimal Vimrc"><h2 id="Minimal Vimrc" class="header"><a href="#Troubleshooting-Minimal Vimrc">Minimal Vimrc</a></h2></div>
+
+<p>
+These steps might help to determine if an issue is related to your
+setup/configuration or if the problem is a bug in Vimwiki.
+</p>
+
+<ol>
+<li>
+Clone a fresh copy of the <code>dev</code> branch.
+<pre sh>
+    cd $HOME
+    mkdir vw_tmp
+    cd vw_tmp
+    git clone -b dev --single-branch https://github.com/vimwiki/vimwiki.git
+</pre>
+
+<li>
+Create a minimal <code>vimrc</code> (you should still be in <code>$HOME/vw_tmp</code>)
+
+<ul>
+<li>
+<code>vim min_vimrc</code>
+
+<li>
+Paste the below text into the opened file. Add any additional Vimwiki
+      settings that are relevant to the issue being tested but keep in minimal!
+<pre vim>
+    set nocompatible
+    filetype plugin on
+    syntax on
+    set runtimepath+=~/vw_tmp/vimwiki
+    let wiki = {}
+    let wiki.path = '~/vw_tmp/wiki'
+    let wiki.path_html = '~/vw_tmp/wiki/html'
+    let wiki.syntax = 'default'
+    let wiki.ext = '.wiki'
+    let g:vimwiki_list = [wiki]
+</pre>
+
+</ul>
+<li>
+Start vim using the <code>min_vimrc</code>
+
+<ul>
+<li>
+<code>vim -u min_vimrc</code>
+
+</ul>
+<li>
+Open up Vimwiki (<code>\ww</code>) and verify the issue still occurs.
+
+</ol>
+
+</body>
+</html>

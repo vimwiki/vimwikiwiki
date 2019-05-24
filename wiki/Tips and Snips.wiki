@@ -1,0 +1,42 @@
+= Tips and Snips =
+
+Vimwiki cannot be all things to all users so here are some tips and code
+snippets you may find useful for customizing Vimwiki to your liking.
+
+== Custom folding ==
+
+Vimwiki has simple folding folding methods built in but lets you easily
+customize folds with the `g:vimwiki_folding` option. For example, if you prefer
+that the last blank line before a heading not get folded, add this to your
+`.vimrc` file:
+
+`let g:vimwiki_folding = 'custom'`
+
+Then add the following to the `ftplugin/vimwiki.vim` plugin in your `.vim`
+configuration folder (create this file if it doesn't already exist):
+
+{{{vim
+let l:vimwiki_fold_blank_lines = 0  " set to 1 to fold blank lines
+let l:vimwiki_header_type = '#'     " set to '=' for wiki syntax
+setlocal foldlevel=1
+setlocal foldenable
+setlocal foldmethod=expr
+setlocal foldexpr=Fold(v:lnum)
+
+ function! Fold(lnum)
+   let fold_level = strlen(matchstr(getline(a:lnum), '^' . l:vimwiki_header_type . '\+'))
+   if (fold_level)
+     return '>' . fold_level  " start a fold level
+   endif
+   if getline(a:lnum) =~? '\v^\s*$'
+     if (strlen(matchstr(getline(a:lnum + 1), '^' . l:vimwiki_header_type . '\+')) > 0 && !g:vimwiki_fold_blank_lines)
+       return '-1' " don't fold last blank line before header
+     endif
+   endif
+   return '=' " return previous fold level
+ endfunction
+}}}
+
+== Got Other Great Ideas You'd Like to Share? ==
+
+If you have other snippets you find useful, please share them here on the wiki.

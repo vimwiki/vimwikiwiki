@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Tips and Snips</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<div id="Tips and Snips"><h1 id="Tips and Snips" class="header"><a href="#Tips and Snips">Tips and Snips</a></h1></div>
+
+<p>
+Vimwiki cannot be all things to all users so here are some tips and code
+snippets you may find useful for customizing Vimwiki to your liking.
+</p>
+
+<div id="Tips and Snips-Custom folding"><h2 id="Custom folding" class="header"><a href="#Tips and Snips-Custom folding">Custom folding</a></h2></div>
+
+<p>
+Vimwiki has simple folding folding methods built in but lets you easily
+customize folds with the <code>g:vimwiki_folding</code> option. For example, if you prefer
+that the last blank line before a heading not get folded, add this to your
+<code>.vimrc</code> file:
+</p>
+
+<p>
+<code>let g:vimwiki_folding = 'custom'</code>
+</p>
+
+<p>
+Then add the following to the <code>ftplugin/vimwiki.vim</code> plugin in your <code>.vim</code>
+configuration folder (create this file if it doesn't already exist):
+</p>
+
+<pre vim>
+let l:vimwiki_fold_blank_lines = 0  " set to 1 to fold blank lines
+let l:vimwiki_header_type = '#'     " set to '=' for wiki syntax
+setlocal foldlevel=1
+setlocal foldenable
+setlocal foldmethod=expr
+setlocal foldexpr=Fold(v:lnum)
+
+ function! Fold(lnum)
+   let fold_level = strlen(matchstr(getline(a:lnum), '^' . l:vimwiki_header_type . '\+'))
+   if (fold_level)
+     return '&gt;' . fold_level  " start a fold level
+   endif
+   if getline(a:lnum) =~? '\v^\s*$'
+     if (strlen(matchstr(getline(a:lnum + 1), '^' . l:vimwiki_header_type . '\+')) &gt; 0 &amp;&amp; !g:vimwiki_fold_blank_lines)
+       return '-1' " don't fold last blank line before header
+     endif
+   endif
+   return '=' " return previous fold level
+ endfunction
+</pre>
+
+<div id="Tips and Snips-Got Other Great Ideas You'd Like to Share?"><h2 id="Got Other Great Ideas You'd Like to Share?" class="header"><a href="#Tips and Snips-Got Other Great Ideas You'd Like to Share?">Got Other Great Ideas You'd Like to Share?</a></h2></div>
+
+<p>
+If you have other snippets you find useful, please share them here on the wiki.
+</p>
+
+</body>
+</html>
