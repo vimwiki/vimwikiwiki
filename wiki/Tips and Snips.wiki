@@ -37,6 +37,20 @@ setlocal foldexpr=Fold(v:lnum)
  endfunction
 }}}
 
+== Encrypting Vimwiki pages ==
+
+If you want to encrypt singe pages of your wiki you can use [[vim-gnupg]] in
+conjunction with vimwiki. Add the following to your `vimrc`:
+
+{{{vim
+let g:GPGFilePattern = '*.\(gpg\|asc\|pgp\)\(.wiki\)\='
+}}}
+
+Then you can create a link to a page in the following form: `[[link.asc]]`, the
+resulting file "link.asc.wiki" will be transparently encrypted by vim-gnupg.
+vim-gnupg will ask you to choose a key and gpg-agent will ask you to unlock the
+chosen key.
+
 == Got Other Great Ideas You'd Like to Share? ==
 
 If you have other snippets you find useful, please share them here on the wiki.

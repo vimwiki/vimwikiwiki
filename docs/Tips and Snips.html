@@ -7,14 +7,14 @@
 </head>
 <body>
 
-<div id="Tips and Snips"><h1 id="Tips and Snips" class="header"><a href="#Tips and Snips">Tips and Snips</a></h1></div>
+<div id="Tips and Snips"><h1 id="Tips and Snips">Tips and Snips</h1></div>
 
 <p>
 Vimwiki cannot be all things to all users so here are some tips and code
 snippets you may find useful for customizing Vimwiki to your liking.
 </p>
 
-<div id="Tips and Snips-Custom folding"><h2 id="Custom folding" class="header"><a href="#Tips and Snips-Custom folding">Custom folding</a></h2></div>
+<div id="Tips and Snips-Custom folding"><h2 id="Custom folding">Custom folding</h2></div>
 
 <p>
 Vimwiki has simple folding folding methods built in but lets you easily
@@ -54,7 +54,25 @@ setlocal foldexpr=Fold(v:lnum)
  endfunction
 </pre>
 
-<div id="Tips and Snips-Got Other Great Ideas You'd Like to Share?"><h2 id="Got Other Great Ideas You'd Like to Share?" class="header"><a href="#Tips and Snips-Got Other Great Ideas You'd Like to Share?">Got Other Great Ideas You'd Like to Share?</a></h2></div>
+<div id="Tips and Snips-Encrypting Vimwiki pages"><h2 id="Encrypting Vimwiki pages">Encrypting Vimwiki pages</h2></div>
+
+<p>
+If you want to encrypt singe pages of your wiki you can use <a href="vim-gnupg.html">vim-gnupg</a> in
+conjunction with vimwiki. Add the following to your <code>vimrc</code>:
+</p>
+
+<pre vim>
+let g:GPGFilePattern = '*.\(gpg\|asc\|pgp\)\(.wiki\)\='
+</pre>
+
+<p>
+Then you can create a link to a page in the following form: <code>[[link.asc]]</code>, the
+resulting file "link.asc.wiki" will be transparently encrypted by vim-gnupg.
+vim-gnupg will ask you to choose a key and gpg-agent will ask you to unlock the
+chosen key.
+</p>
+
+<div id="Tips and Snips-Got Other Great Ideas You'd Like to Share?"><h2 id="Got Other Great Ideas You'd Like to Share?">Got Other Great Ideas You'd Like to Share?</h2></div>
 
 <p>
 If you have other snippets you find useful, please share them here on the wiki.
