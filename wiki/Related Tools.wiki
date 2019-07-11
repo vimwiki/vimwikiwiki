@@ -24,6 +24,10 @@ that is missing!
 - [[https://github.com/teranex/vimwiki-tasks|vimwiki-tasks]]
     - Another integration with [[https://taskwarrior.org/|taskwarrior]]. This
       plugin does not seem to be maintained any longer.
+- [[https://github.com/matt-snider/vim-tagquery|vim-tagquery]]
+    - A vim plugin that enables improved querying of tags.
+    - This can be used to search for multiple tags.
+    - See [[https://github.com/vimwiki/vimwiki/issues/723|Issue #723]]
 
 == External Tools ==
 
