@@ -42,6 +42,10 @@ that is missing!
 - [[https://github.com/WnP/vimwiki_markdown|vimwiki_markdown Python]]
     - A Python script to convert Markdown files to HTML.
     - Also see [[https://github.com/vimwiki/vimwiki/issues/578|Issue #578]]
+- [[https://github.com/maqiv/vimwiki-godown#todo|vimwiki-godown]]
+    - HTML converter that adds the ability to prefix relative links to other
+      Vimwiki pages
+    - See [[https://github.com/vimwiki/vimwiki/issues/284|Issue #284]]
 - [[https://github.com/sstallion/vimwiki-skel|vimwiki-skel]]
     - Uses [[https://dynalon.github.io/mdwiki/#!index.md|MDWiki]] to convert
     Markdown files to HTML.
