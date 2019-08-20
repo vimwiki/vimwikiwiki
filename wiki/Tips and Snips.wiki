@@ -54,6 +54,57 @@ chosen key.
 Note: If you use a different file-extension for your wikipages make sure to
 change the code above accordingly.
 
+== FAQ ==
+
+=== General ===
+==== How to change the folder of the wiki? ====
+You have to configure your wiki(s) in your vimrc, then you can configure among
+other the folder.
+
+{{{vim
+let g:vimwiki_list = [{'path': '~/mywiki/',
+                      \ 'path_html': '~/mywiki_html'}]
+}}}
+
+==== Can I start Vimwiki directly from shell? ====
+Yes:
+
+{{{bash
+$ vim -c VimwikiIndex
+}}}
+
+Opening the file of a wikipage also does the trick, that way you can open it
+with another than your main page. Example:
+
+{{{bash
+$ alias importantpage='vim vimwiki/importantpage.wiki'
+$ importantpage
+}}}
+
+=== Markdown ===
+
+==== How do I use markdown syntax for my wikis? ====
+You have to configure your wiki(s) in your vimrc, then you can configure syntax
+and file extension. To set them to markdown and `.md` add the following
+configuration to you vimrc:
+
+{{{vim
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+}}}
+
+==== Vimwiki considers every markdown-file as a wiki file ====
+
+Vimwiki has a feature called "Temporary Wikis", that will treat every file with
+configured file-extension as a wiki. To disable this feature add this to your vimrc:
+
+{{{vim
+let g:vimwiki_global_ext = 0
+}}}
+
+Alternative you can set vimwiki to use markdown syntax but a different
+file-extension, like the default `.wiki`.
+
 == Got Other Great Ideas You'd Like to Share? ==
 
 If you have other snippets you find useful, please share them here on the wiki.

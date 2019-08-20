@@ -77,6 +77,69 @@ Note: If you use a different file-extension for your wikipages make sure to
 change the code above accordingly.
 </p>
 
+<div id="Tips and Snips-FAQ"><h2 id="FAQ">FAQ</h2></div>
+
+<div id="Tips and Snips-FAQ-General"><h3 id="General">General</h3></div>
+<div id="Tips and Snips-FAQ-General-How to change the folder of the wiki?"><h4 id="How to change the folder of the wiki?">How to change the folder of the wiki?</h4></div>
+<p>
+You have to configure your wiki(s) in your vimrc, then you can configure among
+other the folder.
+</p>
+
+<pre vim>
+let g:vimwiki_list = [{'path': '~/mywiki/',
+                      \ 'path_html': '~/mywiki_html'}]
+</pre>
+
+<div id="Tips and Snips-FAQ-General-Can I start Vimwiki directly from shell?"><h4 id="Can I start Vimwiki directly from shell?">Can I start Vimwiki directly from shell?</h4></div>
+<p>
+Yes:
+</p>
+
+<pre bash>
+$ vim -c VimwikiIndex
+</pre>
+
+<p>
+Opening the file of a wikipage also does the trick, that way you can open it
+with another than your main page. Example:
+</p>
+
+<pre bash>
+$ alias importantpage='vim vimwiki/importantpage.wiki'
+$ importantpage
+</pre>
+
+<div id="Tips and Snips-FAQ-Markdown"><h3 id="Markdown">Markdown</h3></div>
+
+<div id="Tips and Snips-FAQ-Markdown-How do I use markdown syntax for my wikis?"><h4 id="How do I use markdown syntax for my wikis?">How do I use markdown syntax for my wikis?</h4></div>
+<p>
+You have to configure your wiki(s) in your vimrc, then you can configure syntax
+and file extension. To set them to markdown and <code>.md</code> add the following
+configuration to you vimrc:
+</p>
+
+<pre vim>
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+</pre>
+
+<div id="Tips and Snips-FAQ-Markdown-Vimwiki considers every markdown-file as a wiki file"><h4 id="Vimwiki considers every markdown-file as a wiki file">Vimwiki considers every markdown-file as a wiki file</h4></div>
+
+<p>
+Vimwiki has a feature called "Temporary Wikis", that will treat every file with
+configured file-extension as a wiki. To disable this feature add this to your vimrc:
+</p>
+
+<pre vim>
+let g:vimwiki_global_ext = 0
+</pre>
+
+<p>
+Alternative you can set vimwiki to use markdown syntax but a different
+file-extension, like the default <code>.wiki</code>.
+</p>
+
 <div id="Tips and Snips-Got Other Great Ideas You'd Like to Share?"><h2 id="Got Other Great Ideas You'd Like to Share?">Got Other Great Ideas You'd Like to Share?</h2></div>
 
 <p>
