@@ -37,6 +37,35 @@ setlocal foldexpr=Fold(v:lnum)
  endfunction
 }}}
 
+== Task Management ==
+
+Vimwiki makes it effortless to add tasks to any wiki page. Unfortunately,
+this means that your tasks get dispersed rather widely, especially if
+you're tracking action items from meeting notes in your diary. The snippets
+below make it easier to manage tasks in vimwiki without adding any additional
+plugins or relying on external task management tools.
+
+===  Find Incomplete Tasks ===
+
+The following will open a QuickFix window with incomplete tasks, but only those
+which are in a hyphenated (`-`) list. This is a simple way to filter only on
+tasks which are ready to be performed.
+
+{{{vim
+function! VimwikiFindIncompleteTasks()
+  lvimgrep /- \[ \]/ %:p
+  lopen
+endfunction
+
+function! VimwikiFindAllIncompleteTasks()
+  VimwikiSearch /- \[ \]/
+  lopen
+endfunction
+
+nmap <Leader>wa :call VimwikiFindAllIncompleteTasks()<CR>
+nmap <Leader>wx :call VimwikiFindIncompleteTasks()<CR>
+}}}
+
 == Encrypting Vimwiki pages ==
 
 If you want to encrypt singe pages of your wiki you can use [[https://github.com/jamessan/vim-gnupg|vim gnupg]] in
