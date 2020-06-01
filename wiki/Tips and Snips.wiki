@@ -83,6 +83,9 @@ chosen key.
 Note: If you use a different file-extension for your wikipages make sure to
 change the code above accordingly.
 
+== Cite entries from bibtex library ==
+Vimwiki has no support built in yet, but see [[https://github.com/vimwiki/vimwiki/issues/361|this issue]] for workarounds.
+
 == FAQ ==
 
 === General ===
