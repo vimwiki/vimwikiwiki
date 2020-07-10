@@ -119,6 +119,29 @@ $ alias importantpage='vim vimwiki/importantpage.wiki'
 $ importantpage
 }}}
 
+==== Useful shell function for git integration and launch ====
+
+If you init your vimwiki directory as a git repo, and add the following function
+to your `.bashrc` or `.zshrc`, you can interact with the repo using the command
+`vimwiki git [commands]` from any directory:
+
+{{{bash
+vimwiki () {
+    if [[ $# == 0 ]]
+    then
+        nvim +'VimwikiIndex'
+    elif [[ $1 == 'git' ]]
+    then
+        git -C ~/vimwiki/ ${@:2}
+    else
+        echo 'Usage: vimwiki [git] [args ...]'
+    fi
+}
+}}}
+
+In addition, calling `vimwiki` without a git subcommand will automatically open
+the index.
+
 === Markdown ===
 
 ==== How do I use markdown syntax for my wikis? ====
