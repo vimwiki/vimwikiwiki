@@ -62,3 +62,7 @@ that is missing!
 - [[https://github.com/zweifisch/vimwiki-tools|vimwiki-tools]]
     - Python tool to generate an index and convert wiki files to Markdown
     format. This has not been updated in 6 years.
+- [[https://github.com/sstallion/vimwiki-cli|vimwiki-cli]]
+    - Python CLI that provides a front-end for interactive editor commands and
+      can be used to automate repetitive tasks such as rebuilding tag metadata
+      and generating links, all from the command line.
