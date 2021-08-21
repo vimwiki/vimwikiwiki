@@ -139,6 +139,20 @@ vimwiki () {
 }
 }}}
 
+For Fish, add the following function to your `config.fish`:
+
+{{{fish
+function vimwiki 
+    if test (count $argv) -eq 0
+        vim +"VimwikiIndex"
+    else if test $argv[1] = "git"
+        git -C ~/vimwiki/ $argv[2..-1]
+    else
+        echo "Usage: vimwiki [git] [args ...]"
+    end
+end
+}}}
+
 In addition, calling `vimwiki` without a git subcommand will automatically open
 the index.
 

@@ -2,6 +2,7 @@
 <html>
 <head>
 <link rel="Stylesheet" type="text/css" href="style.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <title>Tips and Snips</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,7 +31,6 @@ There are several cheat sheets for Vimwiki:
 <a href="https://dokk.org/library/Vimwiki_1.1.1_Quick_Reference_(Pospichal_2001)">PDF Cheatsheet incl. Syntax</a>
 
 </ul>
-
 <div id="Tips and Snips-Custom folding"><h2 id="Custom folding" class="header"><a href="#Tips and Snips-Custom folding">Custom folding</a></h2></div>
 
 <p>
@@ -185,6 +185,22 @@ vimwiki () {
         echo 'Usage: vimwiki [git] [args ...]'
     fi
 }
+</pre>
+
+<p>
+For Fish, add the following function to your <code>config.fish</code>:
+</p>
+
+<pre fish>
+function vimwiki 
+    if test (count $argv) -eq 0
+        vim +"VimwikiIndex"
+    else if test $argv[1] = "git"
+        git -C ~/vimwiki/ $argv[2..-1]
+    else
+        echo "Usage: vimwiki [git] [args ...]"
+    end
+end
 </pre>
 
 <p>
