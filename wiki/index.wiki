@@ -24,7 +24,7 @@ Checkout these pages for additional information and tips!
 == Chat/Forums ==
 
 - [[https://groups.google.com/forum/#!forum/vimwiki|Google Vimwiki group]]
-- [[https://webchat.freenode.net/?channels=#vimwiki|Freenode Webchat]]
+- [[https://web.libera.chat/?channels=#vimwiki|Libera.Chat Webchat]]
 
 == Outdated Versions ==
 
