@@ -32,6 +32,9 @@ that is missing!
     - Evaluate Markdown code blocks within Vim to scrathpad, or inline code block within the file
     - Works for vimwiki syntax, see [[https://github.com/gpanders/vim-medieval/wiki|configuration wiki page]]
     - Can be used for literate programming
+- [[https://github.com/dhruvasagar/vim-table-mode|vim-table-mode]]
+    - Add formulas to Markdown tables
+    - Works for vimwiki syntax, see [[https://gist.github.com/MartyLake/f6dd46bb479d402b15b32791ababaa28|configuration gist example]]
 
 == External Tools ==
 
