@@ -9,46 +9,68 @@
 </head>
 <body>
 
-<div id="Tips and Snips"><h1 id="Tips and Snips" class="header"><a href="#Tips and Snips">Tips and Snips</a></h1></div>
+<h1 id="Tips and Snips" class="header"><div id="Tips and Snips"><a href="#Tips and Snips">Tips and Snips</a></div></h1>
+<p>
 
+</p>
 <p>
 Vimwiki cannot be all things to all users so here are some tips and code
+</p>
+<p>
 snippets you may find useful for customizing Vimwiki to your liking.
 </p>
+<p>
 
-<div id="Tips and Snips-Cheat Sheet"><h2 id="Cheat Sheet" class="header"><a href="#Tips and Snips-Cheat Sheet">Cheat Sheet</a></h2></div>
+</p>
+<h2 id="Cheat Sheet" class="header"><div id="Tips and Snips-Cheat Sheet"><a href="#Tips and Snips-Cheat Sheet">Cheat Sheet</a></div></h2>
 <p>
 There are several cheat sheets for Vimwiki:
 </p>
 <ul>
 <li>
 <a href="http://thedarnedestthing.com/vimwiki%20cheatsheet">The Darnedest Thing - Vimwiki Cheatsheet</a>
-
+</li>
 <li>
 <a href="https://gist.github.com/drkarl/4c503bccb62558dc85e8b1bc0f29e9cb">Short Cheatsheet</a>
-
+</li>
 <li>
 <a href="https://dokk.org/library/vimwiki_1.1.1_quick_reference_Posp%C3%ADchal_2011">PDF Cheatsheet incl. Syntax</a>
-
+</li>
 </ul>
-<div id="Tips and Snips-Custom folding"><h2 id="Custom folding" class="header"><a href="#Tips and Snips-Custom folding">Custom folding</a></h2></div>
+<h2 id="Custom folding" class="header"><div id="Tips and Snips-Custom folding"><a href="#Tips and Snips-Custom folding">Custom folding</a></div></h2>
+<p>
 
+</p>
 <p>
 Vimwiki has simple folding folding methods built in but lets you easily
+</p>
+<p>
 customize folds with the <code>g:vimwiki_folding</code> option. For example, if you prefer
+</p>
+<p>
 that the last blank line before a heading not get folded, add this to your
+</p>
+<p>
 <code>.vimrc</code> file:
 </p>
+<p>
 
+</p>
 <p>
 <code>let g:vimwiki_folding = 'custom'</code>
 </p>
+<p>
 
+</p>
 <p>
 Then add the following to the <code>ftplugin/vimwiki.vim</code> plugin in your <code>.vim</code>
+</p>
+<p>
 configuration folder (create this file if it doesn't already exist):
 </p>
+<p>
 
+</p>
 <pre vim>
 let l:vimwiki_fold_blank_lines = 0  " set to 1 to fold blank lines
 let l:vimwiki_header_type = '#'     " set to '=' for wiki syntax
@@ -70,25 +92,47 @@ setlocal foldexpr=Fold(v:lnum)
    return '=' " return previous fold level
  endfunction
 </pre>
+<p>
 
-<div id="Tips and Snips-Task Management"><h2 id="Task Management" class="header"><a href="#Tips and Snips-Task Management">Task Management</a></h2></div>
+</p>
+<h2 id="Task Management" class="header"><div id="Tips and Snips-Task Management"><a href="#Tips and Snips-Task Management">Task Management</a></div></h2>
+<p>
 
+</p>
 <p>
 Vimwiki makes it effortless to add tasks to any wiki page. Unfortunately,
+</p>
+<p>
 this means that your tasks get dispersed rather widely, especially if
+</p>
+<p>
 you're tracking action items from meeting notes in your diary. The snippets
+</p>
+<p>
 below make it easier to manage tasks in vimwiki without adding any additional
+</p>
+<p>
 plugins or relying on external task management tools.
 </p>
+<p>
 
-<div id="Tips and Snips-Task Management-Find Incomplete Tasks"><h3 id="Find Incomplete Tasks" class="header"><a href="#Tips and Snips-Task Management-Find Incomplete Tasks">Find Incomplete Tasks</a></h3></div>
+</p>
+<h3 id="Find Incomplete Tasks" class="header"><div id="Tips and Snips-Task Management-Find Incomplete Tasks"><a href="#Tips and Snips-Task Management-Find Incomplete Tasks">Find Incomplete Tasks</a></div></h3>
+<p>
 
+</p>
 <p>
 The following will open a QuickFix window with incomplete tasks, but only those
+</p>
+<p>
 which are in a hyphenated (<code>-</code>) list. This is a simple way to filter only on
+</p>
+<p>
 tasks which are ready to be performed.
 </p>
+<p>
 
+</p>
 <pre vim>
 function! VimwikiFindIncompleteTasks()
   lvimgrep /- \[ \]/ %:p
@@ -103,76 +147,126 @@ endfunction
 nmap &lt;Leader&gt;wa :call VimwikiFindAllIncompleteTasks()&lt;CR&gt;
 nmap &lt;Leader&gt;wx :call VimwikiFindIncompleteTasks()&lt;CR&gt;
 </pre>
+<p>
 
-<div id="Tips and Snips-Encrypting Vimwiki pages"><h2 id="Encrypting Vimwiki pages" class="header"><a href="#Tips and Snips-Encrypting Vimwiki pages">Encrypting Vimwiki pages</a></h2></div>
+</p>
+<h2 id="Encrypting Vimwiki pages" class="header"><div id="Tips and Snips-Encrypting Vimwiki pages"><a href="#Tips and Snips-Encrypting Vimwiki pages">Encrypting Vimwiki pages</a></div></h2>
+<p>
 
+</p>
 <p>
 If you want to encrypt singe pages of your wiki you can use <a href="https://github.com/jamessan/vim-gnupg">vim gnupg</a> in
+</p>
+<p>
 conjunction with vimwiki. Add the following to your <code>vimrc</code>:
 </p>
+<p>
 
+</p>
 <pre vim>
 let g:GPGFilePattern = '*.\(gpg\|asc\|pgp\)\(.wiki\)\='
 </pre>
+<p>
 
+</p>
 <p>
 Then you can create a link to a page in the following form: <code>[[link.asc]]</code>, the
+</p>
+<p>
 resulting file "link.asc.wiki" will be transparently encrypted by vim-gnupg.
+</p>
+<p>
 vim-gnupg will ask you to choose a key and gpg-agent will ask you to unlock the
+</p>
+<p>
 chosen key.
 </p>
+<p>
 
+</p>
 <p>
 Note: If you use a different file-extension for your wikipages make sure to
+</p>
+<p>
 change the code above accordingly.
 </p>
+<p>
 
-<div id="Tips and Snips-Cite entries from bibtex library"><h2 id="Cite entries from bibtex library" class="header"><a href="#Tips and Snips-Cite entries from bibtex library">Cite entries from bibtex library</a></h2></div>
+</p>
+<h2 id="Cite entries from bibtex library" class="header"><div id="Tips and Snips-Cite entries from bibtex library"><a href="#Tips and Snips-Cite entries from bibtex library">Cite entries from bibtex library</a></div></h2>
 <p>
 Vimwiki has no support built in yet, but see <a href="https://github.com/vimwiki/vimwiki/issues/361">this issue</a> for workarounds.
 </p>
+<p>
 
-<div id="Tips and Snips-FAQ"><h2 id="FAQ" class="header"><a href="#Tips and Snips-FAQ">FAQ</a></h2></div>
+</p>
+<h2 id="FAQ" class="header"><div id="Tips and Snips-FAQ"><a href="#Tips and Snips-FAQ">FAQ</a></div></h2>
+<p>
 
-<div id="Tips and Snips-FAQ-General"><h3 id="General" class="header"><a href="#Tips and Snips-FAQ-General">General</a></h3></div>
-<div id="Tips and Snips-FAQ-General-How to change the folder of the wiki?"><h4 id="How to change the folder of the wiki?" class="header"><a href="#Tips and Snips-FAQ-General-How to change the folder of the wiki?">How to change the folder of the wiki?</a></h4></div>
+</p>
+<h3 id="General" class="header"><div id="Tips and Snips-FAQ-General"><a href="#Tips and Snips-FAQ-General">General</a></div></h3>
+<h4 id="How to change the folder of the wiki?" class="header"><div id="Tips and Snips-FAQ-General-How to change the folder of the wiki?"><a href="#Tips and Snips-FAQ-General-How to change the folder of the wiki?">How to change the folder of the wiki?</a></div></h4>
 <p>
 You have to configure your wiki(s) in your vimrc, then you can configure among
+</p>
+<p>
 other the folder.
 </p>
+<p>
 
+</p>
 <pre vim>
 let g:vimwiki_list = [{'path': '~/mywiki/',
                       \ 'path_html': '~/mywiki_html'}]
 </pre>
+<p>
 
-<div id="Tips and Snips-FAQ-General-Can I start Vimwiki directly from shell?"><h4 id="Can I start Vimwiki directly from shell?" class="header"><a href="#Tips and Snips-FAQ-General-Can I start Vimwiki directly from shell?">Can I start Vimwiki directly from shell?</a></h4></div>
+</p>
+<h4 id="Can I start Vimwiki directly from shell?" class="header"><div id="Tips and Snips-FAQ-General-Can I start Vimwiki directly from shell?"><a href="#Tips and Snips-FAQ-General-Can I start Vimwiki directly from shell?">Can I start Vimwiki directly from shell?</a></div></h4>
 <p>
 Yes:
 </p>
+<p>
 
+</p>
 <pre bash>
 $ vim -c VimwikiIndex
 </pre>
+<p>
 
+</p>
 <p>
 Opening the file of a wikipage also does the trick, that way you can open it
+</p>
+<p>
 with another than your main page. Example:
 </p>
+<p>
 
+</p>
 <pre bash>
 $ alias importantpage='vim vimwiki/importantpage.wiki'
 $ importantpage
 </pre>
+<p>
 
-<div id="Tips and Snips-FAQ-General-Useful shell function for git integration and launch"><h4 id="Useful shell function for git integration and launch" class="header"><a href="#Tips and Snips-FAQ-General-Useful shell function for git integration and launch">Useful shell function for git integration and launch</a></h4></div>
+</p>
+<h4 id="Useful shell function for git integration and launch" class="header"><div id="Tips and Snips-FAQ-General-Useful shell function for git integration and launch"><a href="#Tips and Snips-FAQ-General-Useful shell function for git integration and launch">Useful shell function for git integration and launch</a></div></h4>
+<p>
 
+</p>
 <p>
 If you init your vimwiki directory as a git repo, and add the following function
+</p>
+<p>
 to your <code>.bashrc</code> or <code>.zshrc</code>, you can interact with the repo using the command
+</p>
+<p>
 <code>vimwiki git [commands]</code> from any directory:
 </p>
+<p>
 
+</p>
 <pre bash>
 vimwiki () {
     if [[ $# == 0 ]]
@@ -186,11 +280,15 @@ vimwiki () {
     fi
 }
 </pre>
+<p>
 
+</p>
 <p>
 For Fish, add the following function to your <code>config.fish</code>:
 </p>
+<p>
 
+</p>
 <pre fish>
 function vimwiki 
     if test (count $argv) -eq 0
@@ -202,44 +300,74 @@ function vimwiki
     end
 end
 </pre>
+<p>
 
+</p>
 <p>
 In addition, calling <code>vimwiki</code> without a git subcommand will automatically open
+</p>
+<p>
 the index.
 </p>
+<p>
 
-<div id="Tips and Snips-FAQ-Markdown"><h3 id="Markdown" class="header"><a href="#Tips and Snips-FAQ-Markdown">Markdown</a></h3></div>
+</p>
+<h3 id="Markdown" class="header"><div id="Tips and Snips-FAQ-Markdown"><a href="#Tips and Snips-FAQ-Markdown">Markdown</a></div></h3>
+<p>
 
-<div id="Tips and Snips-FAQ-Markdown-How do I use markdown syntax for my wikis?"><h4 id="How do I use markdown syntax for my wikis?" class="header"><a href="#Tips and Snips-FAQ-Markdown-How do I use markdown syntax for my wikis?">How do I use markdown syntax for my wikis?</a></h4></div>
+</p>
+<h4 id="How do I use markdown syntax for my wikis?" class="header"><div id="Tips and Snips-FAQ-Markdown-How do I use markdown syntax for my wikis?"><a href="#Tips and Snips-FAQ-Markdown-How do I use markdown syntax for my wikis?">How do I use markdown syntax for my wikis?</a></div></h4>
 <p>
 You have to configure your wiki(s) in your vimrc, then you can configure syntax
+</p>
+<p>
 and file extension. To set them to markdown and <code>.md</code> add the following
+</p>
+<p>
 configuration to you vimrc:
 </p>
+<p>
 
+</p>
 <pre vim>
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 </pre>
+<p>
 
-<div id="Tips and Snips-FAQ-Markdown-Vimwiki considers every markdown-file as a wiki file"><h4 id="Vimwiki considers every markdown-file as a wiki file" class="header"><a href="#Tips and Snips-FAQ-Markdown-Vimwiki considers every markdown-file as a wiki file">Vimwiki considers every markdown-file as a wiki file</a></h4></div>
+</p>
+<h4 id="Vimwiki considers every markdown-file as a wiki file" class="header"><div id="Tips and Snips-FAQ-Markdown-Vimwiki considers every markdown-file as a wiki file"><a href="#Tips and Snips-FAQ-Markdown-Vimwiki considers every markdown-file as a wiki file">Vimwiki considers every markdown-file as a wiki file</a></div></h4>
+<p>
 
+</p>
 <p>
 Vimwiki has a feature called "Temporary Wikis", that will treat every file with
+</p>
+<p>
 configured file-extension as a wiki. To disable this feature add this to your vimrc:
 </p>
+<p>
 
+</p>
 <pre vim>
 let g:vimwiki_global_ext = 0
 </pre>
+<p>
 
+</p>
 <p>
 Alternative you can set vimwiki to use markdown syntax but a different
+</p>
+<p>
 file-extension, like the default <code>.wiki</code>.
 </p>
+<p>
 
-<div id="Tips and Snips-Got Other Great Ideas You'd Like to Share?"><h2 id="Got Other Great Ideas You'd Like to Share?" class="header"><a href="#Tips and Snips-Got Other Great Ideas You'd Like to Share?">Got Other Great Ideas You'd Like to Share?</a></h2></div>
+</p>
+<h2 id="Got Other Great Ideas You'd Like to Share?" class="header"><div id="Tips and Snips-Got Other Great Ideas You'd Like to Share?"><a href="#Tips and Snips-Got Other Great Ideas You'd Like to Share?">Got Other Great Ideas You'd Like to Share?</a></div></h2>
+<p>
 
+</p>
 <p>
 If you have other snippets you find useful, please share them here on the wiki.
 </p>
