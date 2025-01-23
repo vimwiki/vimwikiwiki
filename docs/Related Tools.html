@@ -2,200 +2,212 @@
 <html>
 <head>
 <link rel="Stylesheet" type="text/css" href="style.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <title>Related Tools</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
-<div id="Related Tools"><h1 id="Related Tools" class="header"><a href="#Related Tools">Related Tools</a></h1></div>
+<h1 id="Related Tools" class="header"><div id="Related Tools"><a href="#Related Tools">Related Tools</a></div></h1>
+<p>
 
+</p>
 <p>
 This page contains Vim plugins and external tools that can be used with Vimwiki.
+</p>
+<p>
 These lists are incomplete so please <em>help update them</em> if you know of something
+</p>
+<p>
 that is missing!
 </p>
+<p>
 
-<div id="Related Tools-Vim Plugins"><h2 id="Vim Plugins" class="header"><a href="#Related Tools-Vim Plugins">Vim Plugins</a></h2></div>
+</p>
+<h2 id="Vim Plugins" class="header"><div id="Related Tools-Vim Plugins"><a href="#Related Tools-Vim Plugins">Vim Plugins</a></div></h2>
+<p>
 
+</p>
 <ul>
 <li>
 <a href="https://github.com/mattn/calendar-vim">calendar-vim</a>
-
+</li>
 <ul>
 <li>
 Select a date to open a diary page.
-
+</li>
 </ul>
 <li>
 <a href="https://github.com/tbabej/taskwiki">taskwiki</a>
-
+</li>
 <ul>
 <li>
 Integration with <a href="https://taskwarrior.org/">taskwarrior</a> for task
       management. This only supports the default syntax.
-
+</li>
 </ul>
 <li>
 <a href="https://github.com/majutsushi/tagbar">Tagbar</a>
-
+</li>
 <ul>
 <li>
 Creates a sidebar to view generated tags. For Vimwiki this can be
       used to display links to headers.
-
+</li>
 <li>
 For this to work an <a href="https://raw.githubusercontent.com/vimwiki/utils/master/vwtags.py">additional script</a>
       is needed which is available in the <a href="https://github.com/vimwiki/utils">utility repository</a>.
       Additional instructions are in the comments of the script.
-
+</li>
 <li>
 If using Markdown syntax <code>#</code> symbols used within code blocks are
       recognized as a header i.e. in a shell script snippet. An alternative
       version that works for Markdown can be found
       <a href="https://raw.githubusercontent.com/jszakmeister/markdown2ctags/master/markdown2ctags.py">here</a>.
-
+</li>
 </ul>
 <li>
 <a href="https://github.com/teranex/vimwiki-tasks">vimwiki-tasks</a>
-
+</li>
 <ul>
 <li>
 Another integration with <a href="https://taskwarrior.org/">taskwarrior</a>. This
       plugin does not seem to be maintained any longer.
-
+</li>
 </ul>
 <li>
 <a href="https://github.com/matt-snider/vim-tagquery">vim-tagquery</a>
-
+</li>
 <ul>
 <li>
 A vim plugin that enables improved querying of tags.
-
+</li>
 <li>
 This can be used to search for multiple tags.
-
+</li>
 <li>
 See <a href="https://github.com/vimwiki/vimwiki/issues/723">Issue #723</a>
-
+</li>
 </ul>
 </ul>
+<h2 id="External Tools" class="header"><div id="Related Tools-External Tools"><a href="#Related Tools-External Tools">External Tools</a></div></h2>
+<p>
 
-<div id="Related Tools-External Tools"><h2 id="External Tools" class="header"><a href="#Related Tools-External Tools">External Tools</a></h2></div>
-
+</p>
 <ul>
 <li>
 <a href="https://github.com/vimwiki/vimwiki/blob/master/autoload/vimwiki/customwiki2html.sh">customwiki2html.sh</a>
-
+</li>
 <ul>
 <li>
 Script available in the official repository to convert Markdown to HTML.
-
+</li>
 <li>
 See the comments for more information and usage instructions.
-
+</li>
 </ul>
 <li>
 <a href="https://pandoc.org/MANUAL.html">Pandoc</a>
-
+</li>
 <ul>
 <li>
 Convert Vimwiki to various other formats such as HTML, PDF, etc.
-
+</li>
 </ul>
 <li>
 <a href="https://github.com/patrickdavey/vimwiki_markdown">vimwiki_markdown</a>
-
+</li>
 <ul>
 <li>
 A Ruby gem to convert vimwiki Markdown files to HTML. Still being actively
     developed.
-
+</li>
 </ul>
 <li>
 <a href="https://github.com/WnP/vimwiki_markdown">vimwiki_markdown Python</a>
-
+</li>
 <ul>
 <li>
 A Python script to convert Markdown files to HTML.
-
+</li>
 <li>
 Also see <a href="https://github.com/vimwiki/vimwiki/issues/578">Issue #578</a>
-
+</li>
 </ul>
 <li>
 <a href="https://github.com/maqiv/vimwiki-godown#todo">vimwiki-godown</a>
-
+</li>
 <ul>
 <li>
 HTML converter that adds the ability to prefix relative links to other
       Vimwiki pages
-
+</li>
 <li>
 See <a href="https://github.com/vimwiki/vimwiki/issues/284">Issue #284</a>
-
+</li>
 </ul>
 <li>
 <a href="https://github.com/sstallion/vimwiki-skel">vimwiki-skel</a>
-
+</li>
 <ul>
 <li>
 Uses <a href="https://dynalon.github.io/mdwiki/#!index.md">MDWiki</a> to convert
     Markdown files to HTML.
-
+</li>
 </ul>
 <li>
 <a href="https://gist.github.com/maikeldotuk/54a91c21ed9623705fdce7bab2989742">wiki2html.sh Gist</a>
-
+</li>
 <ul>
 <li>
 Uses Pandoc to convert Markdown files to HTML.
-
+</li>
 </ul>
 <li>
 <a href="https://github.com/fasheng/vimwiki2org">vimwiki2org</a>
-
+</li>
 <ul>
 <li>
 Convert vimwiki to <a href="https://orgmode.org/">Emacs orgmode</a>. Has not been
     updated in 6 years.
-
+</li>
 </ul>
 <li>
 <a href="https://github.com/ycpei/vwweb">vwweb</a>
-
+</li>
 <ul>
 <li>
 Python script to generate a website from Vimwiki files.
-
+</li>
 </ul>
 <li>
 <a href="https://box.matto.nl/vimwikijabberbot.html">vimwiki-todo-jabberbot</a>
-
+</li>
 <ul>
 <li>
 Todo management using Jabberbot. The linked GitHub repository seems to
     have been removed.
-
+</li>
 </ul>
 <li>
 <a href="https://github.com/zweifisch/vimwiki-tools">vimwiki-tools</a>
-
+</li>
 <ul>
 <li>
 Python tool to generate an index and convert wiki files to Markdown
     format. This has not been updated in 6 years.
-
+</li>
 </ul>
 <li>
 <a href="https://github.com/sstallion/vimwiki-cli">vimwiki-cli</a>
-
+</li>
 <ul>
 <li>
 Python CLI that provides a front-end for interactive editor commands and
       can be used to automate repetitive tasks such as rebuilding tag metadata
       and generating links, all from the command line.
-
+</li>
 </ul>
 </ul>
 
