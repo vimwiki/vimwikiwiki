@@ -28,6 +28,10 @@ that is missing!
     - A vim plugin that enables improved querying of tags.
     - This can be used to search for multiple tags.
     - See [[https://github.com/vimwiki/vimwiki/issues/723|Issue #723]]
+- [[https://github.com/gpanders/vim-medieval|vim-medieval]]
+    - Evaluate Markdown code blocks within Vim to scrathpad, or inline code block within the file
+    - Works for vimwiki syntax, see [[https://github.com/gpanders/vim-medieval/wiki|configuration wiki page]]
+    - Can be used for literate programming
 
 == External Tools ==
 
