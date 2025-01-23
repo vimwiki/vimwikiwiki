@@ -75,3 +75,6 @@ that is missing!
     - Python CLI that provides a front-end for interactive editor commands and
       can be used to automate repetitive tasks such as rebuilding tag metadata
       and generating links, all from the command line.
+- [[https://mermaid.js.org/|mermaid]]
+    - javascript library that renders inline diagrams
+    - See [[https://github.com/vimwiki/vimwiki/issues/1045#issuecomment-2610626215|this issue comment]] on how to integrate
