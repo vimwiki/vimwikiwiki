@@ -92,6 +92,21 @@ change the code above accordingly.
 == Cite entries from bibtex library ==
 Vimwiki has no support built in yet, but see [[https://github.com/vimwiki/vimwiki/issues/361|this issue]] for workarounds.
 
+== Finding Orphans ==
+
+Here's a handy Bash script to detect any .wiki orphans in the current directory. It will output all .wiki files that have no links to them. (Dependency: `rg`.)
+
+{{{sh
+escapethese='?()'
+for f in *.wiki; do
+ [ "$f" = 'index.wiki' ] && continue
+	vwname="$(basename "$f" .wiki | sed "s/[${escapethese}]/\\\\&/g")"
+	if ! rg "\[\[$vwname([|#].*)?\]\]" > /dev/null; then
+		echo "$f"
+j	fi
+done
+}}}
+
 == FAQ ==
 
 === General ===
