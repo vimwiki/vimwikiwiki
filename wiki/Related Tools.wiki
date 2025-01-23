@@ -8,6 +8,8 @@ that is missing!
 
 - [[https://github.com/mattn/calendar-vim|calendar-vim]]
     - Select a date to open a diary page.
+- [[https://github.com/qadzek/link.vim|link.vim]]
+    - Keep long URLs out of your way in Vimwiki (Markdown syntax).
 - [[https://github.com/tbabej/taskwiki|taskwiki]]
     - Integration with [[https://taskwarrior.org/|taskwarrior]] for task
       management. This only supports the default syntax.
