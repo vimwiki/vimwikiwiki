@@ -2,20 +2,30 @@
 <html>
 <head>
 <link rel="Stylesheet" type="text/css" href="style.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <title>Troubleshooting</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
-<div id="Troubleshooting"><h1 id="Troubleshooting" class="header"><a href="#Troubleshooting">Troubleshooting</a></h1></div>
+<h1 id="Troubleshooting" class="header"><div id="Troubleshooting"><a href="#Troubleshooting">Troubleshooting</a></div></h1>
+<p>
 
-<div id="Troubleshooting-Minimal Vimrc"><h2 id="Minimal Vimrc" class="header"><a href="#Troubleshooting-Minimal Vimrc">Minimal Vimrc</a></h2></div>
+</p>
+<h2 id="Minimal Vimrc" class="header"><div id="Troubleshooting-Minimal Vimrc"><a href="#Troubleshooting-Minimal Vimrc">Minimal Vimrc</a></div></h2>
+<p>
 
+</p>
 <p>
 These steps might help to determine if an issue is related to your
+</p>
+<p>
 setup/configuration or if the problem is a bug in Vimwiki.
 </p>
+<p>
 
+</p>
 <ol>
 <li>
 Clone a fresh copy of the <code>dev</code> branch.
@@ -25,14 +35,14 @@ Clone a fresh copy of the <code>dev</code> branch.
     cd vw_tmp
     git clone -b dev --single-branch https://github.com/vimwiki/vimwiki.git
 </pre>
-
+</li>
 <li>
 Create a minimal <code>vimrc</code> (you should still be in <code>$HOME/vw_tmp</code>)
-
+</li>
 <ul>
 <li>
 <code>vim min_vimrc</code>
-
+</li>
 <li>
 Paste the below text into the opened file. Add any additional Vimwiki
       settings that are relevant to the issue being tested but keep in minimal!
@@ -48,19 +58,19 @@ Paste the below text into the opened file. Add any additional Vimwiki
     let wiki.ext = '.wiki'
     let g:vimwiki_list = [wiki]
 </pre>
-
+</li>
 </ul>
 <li>
 Start vim using the <code>min_vimrc</code>
-
+</li>
 <ul>
 <li>
 <code>vim -u min_vimrc</code>
-
+</li>
 </ul>
 <li>
 Open up Vimwiki (<code>\ww</code>) and verify the issue still occurs.
-
+</li>
 </ol>
 
 </body>
