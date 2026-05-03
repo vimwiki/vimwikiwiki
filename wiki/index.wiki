@@ -23,13 +23,14 @@ Checkout these pages for additional information and tips!
 
 == Chat/Forums ==
 
-- [[https://groups.google.com/forum/#!forum/vimwiki|Google Vimwiki group]]
 - [[https://web.libera.chat/?channels=#vimwiki|Libera.Chat Webchat]]
+
+The former Google Group is no longer active.
 
 == Outdated Versions ==
 
 These links point to some old versions of Vimwiki that are no longer maintained.
-The original Vimwiki was hosted on Google Code which has since shutdown.
+The original Vimwiki was hosted on Google Code which has since shut down.
 
 - [[https://code.google.com/archive/p/vimwiki/|Google Code Archive]]
 - [[https://github.com/vimwiki-backup/vimwiki|Google Code Backup on Github]]
